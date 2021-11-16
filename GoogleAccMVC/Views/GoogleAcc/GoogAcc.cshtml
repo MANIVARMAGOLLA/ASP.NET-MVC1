@@ -1,0 +1,74 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GoogAcc</title>
+    <link rel="stylesheet" href="~/Content/Style.css">
+</head>
+<body>
+    <div>
+        <div class="Container">
+            <div class="InputContainer">
+                <div class="Logo"><img src="~/Images/GoogleLogo.png" width="75" height="24" /></div>
+                <div> <h1>Create Your Google Account </h1></div>
+                <div class="Name">  @Html.TextBox("Textbox1", null, new { @class = "FirstName", placeholder = "First Name" })  @Html.TextBox("Textbox2", null, new { @class = "LastName", placeholder = "Last Name" })</</div>
+                <br /><br />
+                <div class="UserGmail">
+                    <div class="UserN">@Html.TextBox("UName", null, new { @class = "UserName", placeholder = "UserName" }) </div>
+                </div>
+                <div class="Mail"><span> &commat; gmail.com</span></div>
+                <div class="InstructionForUser"><h6>You can use letter,numbers & periods</h6></div>
+
+                <div> @Html.ActionLink("Use my current email address instead", "", "", new { @class = "LinkCurrentEmail" })</div>
+                <div class="PasswordConfirm">
+                    <div>@Html.Password("Password", null, new { @class = "Password", placeholder = "Password" })  @Html.Password("confirm", null, new { @class = "Confirm", placeholder = "Confirm" })</div>
+                </div>
+                <div class="StrongPasswordIns"><h6>Use 8 or more characters with a mix of letters, numbers & symbols</h6></div>
+                <div>@Html.CheckBox("CheckBox", false, new { @class = "CheckBox" })</div>
+                <div class="ShowPass">Show password</div>
+                <br />
+                <br /><br />
+                <div> @Html.ActionLink("Sign in instead", "", "", new { @class = "LinkSignin" })</div>
+                <div> @Html.ActionLink("Next", "", "", new { @class = "NextProcess" })</div>
+                <div class="OneAcc"><span>One account. All of Google working for you.</span></div>
+
+            </div>
+
+            <div class="ImageAccount">
+                <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" height="244" width="244" />
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <footer>
+        <div class="listLanguage">
+            @Html.DropDownList("Language", new List<SelectListItem> {
+                    new SelectListItem{Text="English(UnitedState)",Value="0"},
+                    new SelectListItem{Text="Afrikaans",Value="1"},
+                    new SelectListItem{Text="bosanski",Value=""},
+                    new SelectListItem{Text="catala",Value="3"},
+                    new SelectListItem{Text="Dansk",Value="4"},
+                    new SelectListItem{Text="euskara",Value="5"},
+                    new SelectListItem{Text="Filipino",Value="6"},
+                    new SelectListItem{Text="galego",Value="7"},
+                    new SelectListItem{Text="Hrvatski",Value="8"},
+                    new SelectListItem{Text="Indonesia",Value="9"},
+                    new SelectListItem{Text="Polskai",Value="10"},
+
+                                                                    })
+        </div>
+        <div> @Html.ActionLink("Help", "", "", new { @class = "Help" })</div>
+        <div> @Html.ActionLink("Privacy", "", "", new { @class = "Privacy" })</div>
+        <div> @Html.ActionLink("Term", "", "", new { @class = "Term" })</div>
+    </footer>
+</body>
+</html>
